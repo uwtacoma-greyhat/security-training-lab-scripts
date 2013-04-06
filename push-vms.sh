@@ -11,5 +11,5 @@ ENDING_INDEX=12
 trap 'echo " Quiting on signal. was deploying to machine $MACHINE_PREFIX$i"; exit' SIGINT SIGTERM
 
 for i in `seq $STARTING_INDEX $ENDING_INDEX`; do
-    rsync -rvh $SOURCE_LOCATION $MACHINE_PREFIX$i:$DESTINATION_LOCATION -P
+    rsync -rvh $SOURCE_LOCATION $MACHINE_PREFIX$i:$DESTINATION_LOCATION -P --delete
 done
