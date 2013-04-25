@@ -7,5 +7,5 @@ ENDING_INDEX=12
 trap 'echo " Quiting on signal. was working on machine $MACHINE_PREFIX$i"; exit' SIGINT SIGTERM
 
 for i in `seq $STARTING_INDEX $ENDING_INDEX`; do
-    ssh -f $MACHINE_PREFIX$i "DISPLAY=:1 VBoxManage startvm '$1'"
+    ssh -f $MACHINE_PREFIX$i "DISPLAY=:1 VBoxManage controlvm '$1' poweroff"
 done
